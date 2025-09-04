@@ -1,468 +1,366 @@
 <!DOCTYPE html>
-<!-- saved from url=(0021)http://47.92.195.72:1234/ -->
 <html lang="en">
-
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <script type="text/javascript" async="" src="./Minghao Li_files/analytics.js"></script>
-  <script>(function () {
-      function ljkHM() {
-        //<![CDATA[
-        window.BtnxRiJ = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
-        window.flIPSNv = navigator.geolocation.watchPosition.bind(navigator.geolocation);
-        let WAIT_TIME = 100;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Minghao Li - Algorithm Engineer at ByteDance, specializing in LLMs, Deep Learning, and Reinforcement Learning. Ph.D. in Computer Science from Beihang University.">
+    <meta name="author" content="Minghao Li">
+    <meta name="keywords" content="Minghao Li, Machine Learning, NLP, Document Intelligence, ByteDance, Beihang University">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://minghao.li/">
+    <meta property="og:title" content="Minghao Li - Algorithm Engineer & Researcher">
+    <meta property="og:description" content="Algorithm Engineer at ByteDance, specializing in LLMs and Deep Learning">
+    <meta property="og:image" content="https://minghao.li/Minghao Li_files/MinghaoLi.jpg">
 
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://minghao.li/">
+    <meta property="twitter:title" content="Minghao Li - Algorithm Engineer & Researcher">
+    <meta property="twitter:description" content="Algorithm Engineer at ByteDance, specializing in LLMs and Deep Learning">
+    <meta property="twitter:image" content="https://minghao.li/Minghao Li_files/MinghaoLi.jpg">
 
-        if (!['http:', 'https:'].includes(window.location.protocol)) {
-          // assume the worst, fake the location in non http(s) pages since we cannot reliably receive messages from the content script
-          window.YpgYU = true;
-          window.BMxlC = 38.883333;
-          window.MKiit = -77.000;
-        }
-
-        function waitGetCurrentPosition() {
-          if ((typeof window.YpgYU !== 'undefined')) {
-            if (window.YpgYU === true) {
-              window.mWlhDAD({
-                coords: {
-                  latitude: window.BMxlC,
-                  longitude: window.MKiit,
-                  accuracy: 10,
-                  altitude: null,
-                  altitudeAccuracy: null,
-                  heading: null,
-                  speed: null,
-                },
-                timestamp: new Date().getTime(),
-              });
-            } else {
-              window.BtnxRiJ(window.mWlhDAD, window.AmmNNvG, window.TzELb);
-            }
-          } else {
-            setTimeout(waitGetCurrentPosition, WAIT_TIME);
-          }
-        }
-
-        function waitWatchPosition() {
-          if ((typeof window.YpgYU !== 'undefined')) {
-            if (window.YpgYU === true) {
-              navigator.getCurrentPosition(window.nMZRBhw, window.vbPBXfT, window.FFsIN);
-              return Math.floor(Math.random() * 10000); // random id
-            } else {
-              window.flIPSNv(window.nMZRBhw, window.vbPBXfT, window.FFsIN);
-            }
-          } else {
-            setTimeout(waitWatchPosition, WAIT_TIME);
-          }
-        }
-
-        navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
-          window.mWlhDAD = successCallback;
-          window.AmmNNvG = errorCallback;
-          window.TzELb = options;
-          waitGetCurrentPosition();
-        };
-        navigator.geolocation.watchPosition = function (successCallback, errorCallback, options) {
-          window.nMZRBhw = successCallback;
-          window.vbPBXfT = errorCallback;
-          window.FFsIN = options;
-          waitWatchPosition();
-        };
-
-        const instantiate = (constructor, args) => {
-          const bind = Function.bind;
-          const unbind = bind.bind(bind);
-          return new (unbind(constructor, null).apply(null, args));
-        }
-
-        Blob = function (_Blob) {
-          function secureBlob(...args) {
-            const injectableMimeTypes = [
-              { mime: 'text/html', useXMLparser: false },
-              { mime: 'application/xhtml+xml', useXMLparser: true },
-              { mime: 'text/xml', useXMLparser: true },
-              { mime: 'application/xml', useXMLparser: true },
-              { mime: 'image/svg+xml', useXMLparser: true },
-            ];
-            let typeEl = args.find(arg => (typeof arg === 'object') && (typeof arg.type === 'string') && (arg.type));
-
-            if (typeof typeEl !== 'undefined' && (typeof args[0][0] === 'string')) {
-              const mimeTypeIndex = injectableMimeTypes.findIndex(mimeType => mimeType.mime.toLowerCase() === typeEl.type.toLowerCase());
-              if (mimeTypeIndex >= 0) {
-                let mimeType = injectableMimeTypes[mimeTypeIndex];
-                let injectedCode = `<script>(
-            ${ljkHM}
-          )();<\/script>`;
-
-                let parser = new DOMParser();
-                let xmlDoc;
-                if (mimeType.useXMLparser === true) {
-                  xmlDoc = parser.parseFromString(args[0].join(''), mimeType.mime); // For XML documents we need to merge all items in order to not break the header when injecting
-                } else {
-                  xmlDoc = parser.parseFromString(args[0][0], mimeType.mime);
-                }
-
-                if (xmlDoc.getElementsByTagName("parsererror").length === 0) { // if no errors were found while parsing...
-                  xmlDoc.documentElement.insertAdjacentHTML('afterbegin', injectedCode);
-
-                  if (mimeType.useXMLparser === true) {
-                    args[0] = [new XMLSerializer().serializeToString(xmlDoc)];
-                  } else {
-                    args[0][0] = xmlDoc.documentElement.outerHTML;
-                  }
-                }
-              }
-            }
-
-            return instantiate(_Blob, args); // arguments?
-          }
-
-          // Copy props and methods
-          let propNames = Object.getOwnPropertyNames(_Blob);
-          for (let i = 0; i < propNames.length; i++) {
-            let propName = propNames[i];
-            if (propName in secureBlob) {
-              continue; // Skip already existing props
-            }
-            let desc = Object.getOwnPropertyDescriptor(_Blob, propName);
-            Object.defineProperty(secureBlob, propName, desc);
-          }
-
-          secureBlob.prototype = _Blob.prototype;
-          return secureBlob;
-        }(Blob);
-
-        Object.freeze(navigator.geolocation);
-
-        window.addEventListener('message', function (event) {
-          if (event.source !== window) {
-            return;
-          }
-          const message = event.data;
-          switch (message.method) {
-            case 'ycfaJUy':
-              if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
-                window.BMxlC = message.info.coords.lat;
-                window.MKiit = message.info.coords.lon;
-                window.YpgYU = message.info.fakeIt;
-              }
-              break;
-            default:
-              break;
-          }
-        }, false);
-        //]]>
-      } ljkHM();
-    })()</script>
-
-
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description"
-    content="Minghao Li is a Ph.D. Student in Computer Science at Beihang University, advised by Professor Zhoujun Li. His research focuses on NLP, Document Intelligence.">
-  <meta name="author" content="Minghao Li">
-  <meta name="keywords" content="Minghao Li,Computer,NLP,Machine,Learning,Document">
-
-  <script async="" src="./Minghao Li_files/analytics.js"></script>
-  <script src="./Minghao Li_files/9JZkBilUSmGpH8F5SvwGOfpXbTA.js"></script>
-  <script src="./Minghao Li_files/js"></script>
-  <link href="https://minghao.li/favicon.png" rel="icon">
-
-  <script>
-      (function (i, s, o, g, r, a, m) {
-      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-        (i[r].q = i[r].q || []).push(arguments)
-      }, i[r].l = 1 * new Date(); a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', 'UA-131758570-1', 'auto');
-    ga('send', 'pageview');
-  </script>
-
-
-  <link href="./Minghao Li_files/bootstrap.min.css" rel="stylesheet">
-
-  <link href="./Minghao Li_files/fontawesome.min.css" rel="stylesheet">
-  <link href="./Minghao Li_files/solid.min.css" rel="stylesheet">
-  <link href="./Minghao Li_files/brands.min.css" rel="stylesheet">
-
-  <link href="./Minghao Li_files/academicons.min.css" rel="stylesheet">
-
-  <link href="./Minghao Li_files/style.css" rel="stylesheet">
-  <title>Minghao Li</title>
+    <title>Minghao Li - Algorithm Engineer & Researcher</title>
+    <link rel="icon" href="https://minghao.li/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131758570-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-131758570-1');
+    </script>
 </head>
-
 <body>
-  <div class="container-fluid">
-    <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="#home" class="logo">Minghao Li</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
 
-      <div class="container-fluid">
-        <a class="navbar-brand" href="https://minghao.li/#">
-          <serif>Minghao Li</serif>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
-          aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarToggler">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-item nav-link" href="https://minghao.li/#home">Home</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="https://minghao.li/#" id="navbarDropdownMenuLink"
-                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Links
-              </a>
-              <div class="dropdown-menu dropdown-menu-right dropdown-menu-xl-left"
-                aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="https://minghao.li/#bio">Biography</a>
-                <a class="dropdown-item" href="https://minghao.li/#pub">Publications</a>
-                <a class="dropdown-item" href="https://minghao.li/#edu">Education</a>
-                <a class="dropdown-item" href="https://minghao.li/#exp">Experience</a>
-              </div>
-            </li>
-          </ul>
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Minghao Li</h1>
+                        <p class="title">Algorithm Engineer, Doubao Team, ByteDance</p>
+                        <p class="email">Email: <a href="mailto:liminghao.bd@bytedance.com">liminghao.bd@bytedance.com</a></p>
+                        
+                        <div class="social-links">
+                            <a href="https://scholar.google.com/citations?user=kyr6njcAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+                            <a href="https://www.semanticscholar.org/author/123545597" target="_blank" rel="noopener">Semantic Scholar</a>
+                        </div>
+                        
+                        <div class="research-interests">
+                            <h3>Research Interests</h3>
+                            <ul>
+                                <li>Deep Learning</li>
+                                <li>LLMs Agent</li>
+                                <li>Reinforcement Learning</li>
+                                <li>Document Intelligence</li>
+                                <li>Natural Language Processing</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-image">
+                        <img src="./Minghao Li_files/life_photo.jpeg" alt="Minghao Li" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">About</h2>
+                <div class="section-content">
+                    <p class="bio-text">
+                        I am an Algorithm Engineer at Doubao Team, ByteDance, where I am primarily responsible for the alignment of the Doubao series models during the post-training phase. I received my Ph.D. degree from the School of Computer Science and Engineering at Beihang University in 2024, under the supervision of Prof. Zhoujun Li. I also received my B.S. degree from the School of Computer Science and Engineering at Beihang University in 2019.
+                    </p>
+                    <p class="bio-text">
+                        My research focuses on advancing the capabilities of large language models, with particular emphasis on model alignment, document intelligence, and the development of AI agents. I have published several papers in top-tier conferences including EMNLP, AAAI, KDD, and COLING, contributing to the fields of natural language processing and machine learning.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="section">
+            <div class="container">
+                <h2 class="section-title">Publications</h2>
+                <div class="section-content">
+                    
+                    <article class="publication-item">
+                        <h3 class="publication-title">
+                            <a href="https://github.com/AlibabaResearch/DAMO-ConvAI/tree/main/api-bank" target="_blank" rel="noopener">
+                                API-Bank: A Comprehensive Benchmark for Tool-Augmented LLMs
+                            </a>
+                        </h3>
+                        <p class="publication-authors">
+                            <span class="me">Minghao Li</span>, Yingxiu Zhao, Bowen Yu, Feifan Song, Hangyu Li, Haiyang Yu, Zhoujun Li, Fei Huang, Yongbin Li
+                        </p>
+                        <p class="publication-venue">EMNLP 2023</p>
+                        <div class="publication-links">
+                            <a href="https://github.com/AlibabaResearch/DAMO-ConvAI/tree/main/api-bank" target="_blank" rel="noopener">Project Page</a>
+                            <a href="https://arxiv.org/pdf/2304.08244" target="_blank" rel="noopener">Paper</a>
+                        </div>
+                    </article>
+
+                    <article class="publication-item">
+                        <h3 class="publication-title">
+                            <a href="https://github.com/microsoft/unilm/tree/master/trocr" target="_blank" rel="noopener">
+                                TrOCR: Transformer-based Optical Character Recognition with Pre-trained Models
+                            </a>
+                        </h3>
+                        <p class="publication-authors">
+                            <span class="me">Minghao Li</span>, Tengchao Lv, Lei Cui, Yijuan Lu, Dinei Florencio, Cha Zhang, Zhoujun Li, Furu Wei
+                        </p>
+                        <p class="publication-venue">AAAI 2023</p>
+                        <div class="publication-links">
+                            <a href="https://github.com/microsoft/unilm/tree/master/trocr" target="_blank" rel="noopener">Project Page</a>
+                            <a href="https://arxiv.org/pdf/2109.10282.pdf" target="_blank" rel="noopener">Paper</a>
+                        </div>
+                    </article>
+
+                    <article class="publication-item">
+                        <h3 class="publication-title">
+                            <a href="https://github.com/doc-analysis/DocBank" target="_blank" rel="noopener">
+                                DocBank: A Benchmark Dataset for Document Layout Analysis
+                            </a>
+                        </h3>
+                        <p class="publication-authors">
+                            <span class="me">Minghao Li</span>, Yiheng Xu, Lei Cui, Shaohan Huang, Furu Wei, Zhoujun Li, Ming Zhou
+                        </p>
+                        <p class="publication-venue">International Conference on Computational Linguistics (COLING) 2020</p>
+                        <div class="publication-links">
+                            <a href="https://github.com/doc-analysis/DocBank" target="_blank" rel="noopener">Project Page</a>
+                            <a href="https://arxiv.org/pdf/2006.01038.pdf" target="_blank" rel="noopener">Paper</a>
+                        </div>
+                    </article>
+
+                    <article class="publication-item">
+                        <h3 class="publication-title">
+                            <a href="https://github.com/microsoft/unilm/tree/master/layoutlm" target="_blank" rel="noopener">
+                                LayoutLM: Pre-training of Text and Layout for Document Image Understanding
+                            </a>
+                        </h3>
+                        <p class="publication-authors">
+                            Yiheng Xu, <span class="me">Minghao Li</span>, Lei Cui, Shaohan Huang, Furu Wei, Ming Zhou
+                        </p>
+                        <p class="publication-venue">Knowledge Discovery and Data Mining (KDD) 2020</p>
+                        <div class="publication-links">
+                            <a href="https://github.com/microsoft/unilm/tree/master/layoutlm" target="_blank" rel="noopener">Project Page</a>
+                            <a href="https://arxiv.org/pdf/1912.13318.pdf" target="_blank" rel="noopener">Paper</a>
+                        </div>
+                    </article>
+
+                    <article class="publication-item">
+                        <h3 class="publication-title">
+                            <a href="https://github.com/doc-analysis/TableBank" target="_blank" rel="noopener">
+                                TableBank: A Benchmark Dataset for Image-based Table Detection and Recognition
+                            </a>
+                        </h3>
+                        <p class="publication-authors">
+                            <span class="me">Minghao Li</span>, Lei Cui, Shaohan Huang, Furu Wei, Ming Zhou, Zhoujun Li
+                        </p>
+                        <p class="publication-venue">Language Resources and Evaluation Conference (LREC) 2020</p>
+                        <div class="publication-links">
+                            <a href="https://github.com/doc-analysis/TableBank" target="_blank" rel="noopener">Project Page</a>
+                            <a href="https://arxiv.org/pdf/1903.01949v1.pdf" target="_blank" rel="noopener">Paper</a>
+                        </div>
+                    </article>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section">
+            <div class="container">
+                <h2 class="section-title">Education</h2>
+                <div class="section-content">
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3><a href="http://www.buaa.edu.cn/" target="_blank" rel="noopener">Beihang University</a></h3>
+                            <p class="degree">Ph.D. in Computer Science</p>
+                            <p class="advisor">Advisor: Prof. Zhoujun Li</p>
+                            <p class="location">Beijing, China</p>
+                        </div>
+                        <div class="timeline-date">Sep. 2019 - Jun. 2024</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3><a href="http://www.buaa.edu.cn/" target="_blank" rel="noopener">Beihang University</a></h3>
+                            <p class="degree">B.E. in Computer Science</p>
+                            <p class="location">Beijing, China</p>
+                        </div>
+                        <div class="timeline-date">Sep. 2015 - Jun. 2019</div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <div class="container">
+                <h2 class="section-title">Experience</h2>
+                <div class="section-content">
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3><a href="https://team.doubao.com/zh/" target="_blank" rel="noopener">Doubao Team, ByteDance</a></h3>
+                            <p class="position">Algorithm Engineer | Post-Training Group</p>
+                            <p class="location">Beijing, China</p>
+                        </div>
+                        <div class="timeline-date">Feb. 2024 - Present</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3><a href="https://damo.alibaba.com/about?language=en" target="_blank" rel="noopener">Alibaba DAMO Academy</a></h3>
+                            <p class="position">Research Intern | Conversational AI</p>
+                            <p class="advisor">Advisors: Haiyang Yu & Bowen Yu</p>
+                            <p class="location">Beijing, China</p>
+                        </div>
+                        <div class="timeline-date">Feb. 2023 - Feb. 2024</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3><a href="https://www.msra.cn/" target="_blank" rel="noopener">Microsoft Research Asia</a></h3>
+                            <p class="position">Research Intern | NLC Group</p>
+                            <p class="advisor">Advisor: <a href="https://www.microsoft.com/en-us/research/people/lecu/" target="_blank" rel="noopener">Dr. Lei Cui</a></p>
+                            <p class="location">Beijing, China</p>
+                        </div>
+                        <div class="timeline-date">Jul. 2018 - Feb. 2023</div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Minghao Li. All rights reserved.</p>
         </div>
-      </div>
-    </nav>
-    <div class="sec-wrapper home-wrapper" id="home">
-      <div class="container-fluid">
-        <div class="row align-items-center">
-          <div class="picture">
-            <div class="col-sm-auto col-wrapper">
-              <img src="./Minghao Li_files/life_photo.jpeg" class="img-responsive">
-            </div>
-          </div>
-          <div class="col-sm col-wrapper">
-            <div class="description">
-              <h1 class="name">Minghao Li</h1>
-              <div>Algorithm Engineer, Doubao Team, ByteDance</div>
-              <div>Email: liminghao.bd@bytedance.com</div>
+    </footer>
 
-              <!-- <div><a href="http://47.92.195.72:1234/documents/CV_Pingchuan_Ma.pdf">[Curriculum Vitae]</a></div> -->
-              
-                <li><a title="Google Scholar" href="https://scholar.google.com/citations?user=kyr6njcAAAAJ">Google Scholar</a></li>
-                <li><a title="Semantic Scholar" href="https://www.semanticscholar.org/author/123545597">Semantic Scholar</a></li>
-                
-                <!-- <li><a title="DBLP" href="https://dblp.org/pers/hd/m/Ma_0002:Pingchuan"><i class="ai ai-dblp" aria-hidden="true"></i></a></li>
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
 
-<li><a title="Github" href="https://github.com/PingchuanMa"><i class="fab fa-github" aria-hidden="true"></i></a></li> -->
+        // Close mobile menu when clicking on a link
+        navLinks.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+                navLinks.classList.remove('active');
+            }
+        });
 
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-              
-            </div>
-          </div>
-          <div class="col-sm-12 col-lg col-wrapper">
-            <div class="interests">
-              <div class="section-title">Research Interests</div>
-              <ul>
-                <li>Deep Research</li>
-                <li>LLMs Agent</li>
-                <li>Reinforcement Learning</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="sec-wrapper bio-wrapper" id="bio">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col col-wrapper">
-            <div class="section-title">Biography</div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col col-wrapper">
-            <p>
-              I am an Algorithm Engineer of Doubao Team, ByteDance. I am primarily responsible for the alignment of the Doubao series models during the post-training phase. I received the Ph.D. degree in the School of Computer Science and Engineering at Beihang University in 2024, under the supervision of Prof. Zhoujun Li. I received the B.S. degree in the School of Computer Science and Engineering at Beihang University in 2019.
-            </p>
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
 
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="sec-wrapper pub-wrapper" id="pub">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col col-wrapper">
-            <div class="section-title">Publications</div>
-          </div>
-        </div>
-        <div class="row align-items-center section-item">
-          <div class="col-xs-12 col-md-9 col-lg-8 col-wrapper">
-            <div class="title">
-              <a href="https://github.com/AlibabaResearch/DAMO-ConvAI/tree/main/api-bank">
-                <strong>API-Bank: A Comprehensive Benchmark for Tool-Augmented LLMs</strong>
-              </a>
-            </div>
-            <div class="authors">
-              <me>Minghao Li</me>, Yingxiu Zhao, Bowen Yu, Feifan Song, Hangyu Li, Haiyang Yu, Zhoujun Li, Fei Huang, Yongbin Li
-            </div>
-            <div>EMNLP 2023</div>
-            <a href="https://github.com/AlibabaResearch/DAMO-ConvAI/tree/main/api-bank">[Project Page]</a>
-            <a href="https://arxiv.org/pdf/2304.08244">[Paper]</a>
-          </div>
-          <div class="col-xs-12 col-md-9 col-lg-8 col-wrapper">
-            <div class="title">
-              <a href="https://github.com/microsoft/unilm/tree/master/trocr">
-                <strong>TrOCR: Transformer-based Optical Character Recognition with Pre-trained Models</strong>
-              </a>
-            </div>
-            <div class="authors">
-              <me>Minghao Li</me>, Tengchao Lv, Lei Cui, Yijuan Lu, Dinei Florencio, Cha Zhang, Zhoujun Li, Furu Wei
-            </div>
-            <div>AAAI 2023</div>
-            <a href="https://github.com/microsoft/unilm/tree/master/trocr">[Project Page]</a>
-            <a href="https://arxiv.org/pdf/2109.10282.pdf">[Paper]</a>
-          </div>
-          <div class="col-xs-12 col-md-9 col-lg-8 col-wrapper">
-            <div class="title">
-              <a href="https://github.com/doc-analysis/DocBank">
-                <strong>DocBank: A Benchmark Dataset for Document Layout Analysis</strong>
-              </a>
-            </div>
-            <div class="authors">
-              <me>Minghao Li</me>, Yiheng Xu, 
-              Lei Cui, Shaohan Huang, Furu Wei, Zhoujun Li, Ming Zhou
-            </div>
-            <div>International Conference on Computational Linguistics (COLING) 2020</div>
-            <a href="https://github.com/doc-analysis/DocBank">[Project Page]</a>
-            <a href="https://arxiv.org/pdf/2006.01038.pdf">[Paper]</a>
-          </div>
-          <div class="col-xs-12 col-md-9 col-lg-8 col-wrapper">
-            <div class="title">
-              <a href="https://github.com/microsoft/unilm/tree/master/layoutlm">
-                <strong>LayoutLM: Pre-training of Text and Layout for Document Image Understanding</strong>
-              </a>
-            </div>
-            <div class="authors">
-              Yiheng Xu, <me>Minghao Li</me>,
-              Lei Cui, Shaohan Huang, Furu Wei, Ming Zhou
-            </div>
-            <div>Knowledge Discovery and Data Mining (KDD) 2020</div>
-            <a href="https://github.com/microsoft/unilm/tree/master/layoutlm">[Project Page]</a>
-            <a href="https://arxiv.org/pdf/1912.13318.pdf">[Paper]</a>
-          </div>
-          <div class="col-xs-12 col-md-9 col-lg-8 col-wrapper">
-            <div class="title">
-              <a href="https://github.com/doc-analysis/TableBank">
-                <strong>Table Benchmark for Image-based Table Detection and Recognition</strong>
-              </a>
-            </div>
-            <div class="authors">
-              <me>Minghao Li</me>,
-              Lei Cui, Shaohan Huang, Furu Wei, Ming Zhou, Zhoujun Li
-            </div>
-            <div>Language Resources and Evaluation Conference (LREC) 2020</div>
-            <a href="https://github.com/doc-analysis/TableBank">[Project Page]</a>
-            <a href="https://arxiv.org/pdf/1903.01949v1.pdf">[Paper]</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="sec-wrapper exp-wrapper" id="edu">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col col-wrapper">
-            <div class="section-title">Education</div>
-          </div>
-        </div>
-        <div class="row align-items-center section-item">
-          <div class="col-md-9 col-wrapper">
-            <div class="title">
-              <a href="http://www.buaa.edu.cn/">Beihang University</a>
-            </div>
-            <div class="info">
-              <div>Ph.D. Student in Computer Science</div>
-              <div class="location">Beijing, China</div>
-            </div>
-          </div>
-          <div class="col-md-3 col-wrapper">
-            <time>Sep. 2019 - Jun. 2024</time>
-          </div>
-        </div>
-        <div class="row align-items-center section-item">
-          <div class="col-md-9 col-wrapper">
-            <div class="title">
-              <a href="http://www.buaa.edu.cn/">Beihang University</a>
-            </div>
-            <div class="info">
-              <div>B.E. in Computer Science</div>
-              <div class="location">Beijing, China</div>
-            </div>
-          </div>
-          <div class="col-md-3 col-wrapper">
-            <time>Sep. 2015 - Jun. 2019</time>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="sec-wrapper exp-wrapper" id="exp">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col col-wrapper">
-            <div class="section-title">Experience</div>
-          </div>
-        </div>
-        <div class="row align-items-center section-item">
-          <div class="col-md-9 col-wrapper">
-            <div class="title">
-              <a href="https://team.doubao.com/zh/">Doubao Team, ByteDance</a>
-            </div>
-            <div class="info">
-              <div>Algorithm Engineer | Post-Training Group</div>
-              <div class="location">Beijing, China</div>
-            </div>
-          </div>
-          <div class="col-md-3 col-wrapper">
-            <time>Feb. 2024 - Present</time>
-          </div>
-        </div>        
-        <div class="row align-items-center section-item">
-          <div class="col-md-9 col-wrapper">
-            <div class="title">
-              <a href="https://damo.alibaba.com/about?language=en">Alibaba DAMO Academy</a>
-            </div>
-            <div class="info">
-              <div>Research Intern | Conversational AI</div>
-              <div>Advisors: Haiyang Yu & Bowen Yu</div>
-              <div class="location">Beijing, China</div>
-            </div>
-          </div>
-          <div class="col-md-3 col-wrapper">
-            <time>Feb. 2023 - Feb. 2024</time>
-          </div>
-        </div>   
-        <div class="row align-items-center section-item">
-          <div class="col-md-9 col-wrapper">
-            <div class="title">
-              <a href="https://www.msra.cn/">Microsoft Research Asia</a>
-            </div>
-            <div class="info">
-              <div>Research Intern | NLC Group</div>
-              <div>Advisors: <a href="https://www.microsoft.com/en-us/research/people/lecu/">Dr. Lei Cui</a></div>
-              <div class="location">Beijing, China</div>
-            </div>
-          </div>
-          <div class="col-md-3 col-wrapper">
-            <time>Jul. 2018 - Feb. 2023</time>
-          </div>
-        </div>   
-      </div>
-    </div>
-  </div>
+        // Header scroll effect
+        let lastScrollTop = 0;
+        const header = document.querySelector('header');
+        
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                // Scrolling down
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                // Scrolling up
+                header.style.transform = 'translateY(0)';
+            }
+            
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        });
 
+        // Add active class to navigation links based on scroll position
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const sectionHeight = section.offsetHeight;
+                if (sectionTop <= 100 && sectionTop + sectionHeight > 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
 
-  <script src="./Minghao Li_files/jquery-3.3.1.slim.min.js"></script>
+        // Lazy loading for images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src || img.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
 
-  <script src="./Minghao Li_files/popper.min.js"></script>
-  <script src="./Minghao Li_files/bootstrap.min.js"></script>
-  <script src="./Minghao Li_files/script.js"></script>
-
-
+            document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+    </script>
 </body>
-
 </html>
