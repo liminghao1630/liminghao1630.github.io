@@ -1,0 +1,49 @@
+/*
+ *  Academicons 1.9.2 by James Walsh (https://jpswalsh.github.io/academicons/)
+ *  Replacement icons for academic positions
+ */
+
+@font-face {
+  font-family: 'Academicons';
+  src: url('../fonts/academicons.eot?v=1.9.2');
+  src: url('../fonts/academicons.eot?v=1.9.2#iefix') format('embedded-opentype'),
+       url('../fonts/academicons.ttf?v=1.9.2') format('truetype'),
+       url('../fonts/academicons.woff?v=1.9.2') format('woff'),
+       url('../fonts/academicons.svg?v=1.9.2#academicons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.ai {
+  display: inline-block;
+  font: normal normal normal 14px/1 Academicons;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Specific icon classes for common academic platforms */
+.ai-google-scholar:before { content: "\e900"; }
+.ai-google-scholar-square:before { content: "\e901"; }
+.ai-orcid:before { content: "\e902"; }
+.ai-orcid-square:before { content: "\e903"; }
+.ai-researchgate:before { content: "\e904"; }
+.ai-researchgate-square:before { content: "\e905"; }
+.ai-academia:before { content: "\e906"; }
+.ai-academia-square:before { content: "\e907"; }
+.ai-arxiv:before { content: "\e908"; }
+.ai-arxiv-square:before { content: "\e909"; }
+.ai-dblp:before { content: "\e90a"; }
+.ai-dblp-square:before { content: "\e90b"; }
+.ai-semantic-scholar:before { content: "\e90c"; }
+.ai-semantic-scholar-square:before { content: "\e90d"; }
+
+/* Fallback for when font is not available */
+.ai-google-scholar:before { content: "🎓"; font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Emoji", "Arial", sans-serif; }
+.ai-orcid:before { content: "🆔"; font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Emoji", "Arial", sans-serif; }
+.ai-researchgate:before { content: "🔬"; font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Emoji", "Arial", sans-serif; }
+.ai-academia:before { content: "📚"; font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Emoji", "Arial", sans-serif; }
+.ai-arxiv:before { content: "📄"; font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Emoji", "Arial", sans-serif; }
+.ai-dblp:before { content: "📖"; font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Emoji", "Arial", sans-serif; }
+.ai-semantic-scholar:before { content: "📚"; font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Emoji", "Arial", sans-serif; }
