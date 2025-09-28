@@ -223,8 +223,8 @@
 
 <h1 id="-news">🔥 新闻</h1>
 <ul>
-  <li><em>2024.11</em>: 🌱 发布<strong>SamplingEvolve</strong>：将测试时扩展从独立采样轨迹转变为经验驱动的轨迹间演化，通过持续轨迹优化在GAIA数据集上达到91.36%准确率。</li>
-  <li><em>2024.08</em>: 📊 发布<strong>ReportBench</strong>：首个面向深度研究智能体的学术调研报告评测基准，基于arXiv论文自动构建并具备全面的事实核查机制。</li>
+  <li><em>2025.09</em>: 🌱 发布<strong>SamplingEvolve</strong>：将测试时扩展从独立采样轨迹转变为经验驱动的轨迹间演化，通过持续轨迹优化在GAIA数据集上达到91.36%准确率。</li>
+  <li><em>2025.08</em>: 📊 发布<strong>ReportBench</strong>：首个面向深度研究智能体的学术调研报告评测基准，基于arXiv论文自动构建并具备全面的事实核查机制。</li>
 </ul>
 
 <h1 id="-education">📖 教育经历</h1>
@@ -269,8 +269,7 @@
 <h1 id="-honors-and-awards">🎖 荣誉奖项</h1>
 <ul>
   <li><em>2024</em> <strong>国际基础科学大会前沿科学奖</strong>（LayoutLM项目）- 由丘成桐先生发起，北京市人民政府、科学技术部、中国科学技术协会及世界华人数学家联盟主办的国际基础科学领域学术盛会颁发</li>
-  <li><em>2024</em> <strong>阿里星</strong> - 阿里巴巴人才计划认可</li>
-  <li><em>2024</em> <strong>华为天才少年</strong> - 华为精英人才培养计划</li>
+  <li><em>2024</em> <strong>阿里星</strong> & <strong>华为天才少年</strong></li>
 </ul>
 
 <h1 id="-publications">📝 发表论文</h1>
@@ -307,6 +306,27 @@
   gtag('config', "");
 </script>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Mobile navigation toggle functionality
+    const navButton = document.querySelector('.greedy-nav button');
+    const visibleLinks = document.querySelector('.visible-links');
+    
+    if (navButton && visibleLinks) {
+        navButton.addEventListener('click', function() {
+            const isOpen = visibleLinks.classList.contains('show');
+            
+            if (isOpen) {
+                visibleLinks.classList.remove('show');
+                navButton.classList.remove('close');
+            } else {
+                visibleLinks.classList.add('show');
+                navButton.classList.add('close');
+            }
+        });
+    }
+});
+</script>
 
   </body>
 </html>

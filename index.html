@@ -223,8 +223,8 @@
 
 <h1 id="-news">🔥 News</h1>
 <ul>
-  <li><em>2024.11</em>: 🌱 Released <strong>SamplingEvolve</strong>: A test-time scaling framework that transforms model sampling from independent trajectories to experience-guided evolution, achieving 91.36% accuracy on GAIA dataset through continuous trajectory optimization.</li>
-  <li><em>2024.08</em>: 📊 Published <strong>ReportBench</strong>: The first systematic benchmark for evaluating Deep Research agents on academic survey tasks, featuring automated construction from arXiv papers and comprehensive fact-checking mechanisms.</li>
+  <li><em>2025.09</em>: 🌱 Released <strong>SamplingEvolve</strong>: A test-time scaling framework that transforms model sampling from independent trajectories to experience-guided evolution, achieving 91.36% accuracy on GAIA dataset through continuous trajectory optimization.</li>
+  <li><em>2025.08</em>: 📊 Published <strong>ReportBench</strong>: The first systematic benchmark for evaluating Deep Research agents on academic survey tasks, featuring automated construction from arXiv papers and comprehensive fact-checking mechanisms.</li>
 </ul>
 
 <h1 id="-education">📖 Education</h1>
@@ -269,8 +269,7 @@
 <h1 id="-honors-and-awards">🎖 Honors and Awards</h1>
 <ul>
   <li><em>2024</em> <strong>International Congress of Basic Science Frontier Science Award</strong> (for LayoutLM) - Awarded at the International Congress of Basic Science founded by S.T. Yau, hosted by Beijing Municipal Government, Ministry of Science and Technology, China Association for Science and Technology, and International Congress of Chinese Mathematicians</li>
-  <li><em>2024</em> <strong>Alibaba Star</strong> - Prestigious talent program recognition</li>
-  <li><em>2024</em> <strong>Huawei Genius Youth Program</strong> - Elite talent development program</li>
+  <li><em>2024</em> <strong>Alibaba Star</strong> & <strong>Huawei Genius Youth Program</strong> </li>  
 </ul>
 
 <h1 id="-publications">📝 Publications</h1>
@@ -293,7 +292,7 @@
           </section>
         </div>
       </article>
-    </div>
+  </div>
 
     <script src="/assets/js/main.min.js"></script>
 
@@ -307,6 +306,27 @@
   gtag('config', "");
 </script>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Mobile navigation toggle functionality
+    const navButton = document.querySelector('.greedy-nav button');
+    const visibleLinks = document.querySelector('.visible-links');
+    
+    if (navButton && visibleLinks) {
+        navButton.addEventListener('click', function() {
+            const isOpen = visibleLinks.classList.contains('show');
+            
+            if (isOpen) {
+                visibleLinks.classList.remove('show');
+                navButton.classList.remove('close');
+            } else {
+                visibleLinks.classList.add('show');
+                navButton.classList.add('close');
+            }
+        });
+    }
+});
+</script>
 
-</body>
+  </body>
 </html>

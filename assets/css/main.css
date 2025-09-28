@@ -325,29 +325,264 @@ code {
 }
 
 @media (max-width: 768px) {
+  /* Override any existing navicon styles on mobile */
+  .navicon,
+  .navicon::before,
+  .navicon::after {
+    all: unset !important;
+  }
+  
+  /* Force body to use flexbox layout */
+  body {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  
+  /* Move sidebar to top on mobile */
+  .sidebar {
+    order: -1 !important;
+    position: static !important;
+    width: 100% !important;
+    text-align: center !important;
+    padding: 1rem !important;
+    border-bottom: 1px solid #f2f3f3 !important;
+    display: block !important;
+    visibility: visible !important;
+    overflow: visible !important;
+    height: auto !important;
+  }
+  
+  /* Center avatar on mobile */
+  .author__avatar {
+    width: 120px !important;
+    height: 120px !important;
+    margin: 0 auto 1rem auto !important;
+    display: block !important;
+  }
+  
+  .author__avatar img {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    display: block !important;
+    margin: 0 auto !important;
+  }
+  
+  /* Ensure author content is visible on mobile */
+  .author__content,
+  .author__urls-wrapper,
+  .author__urls {
+    display: block !important;
+    visibility: visible !important;
+  }
+  
+  /* Center all author content */
+  .profile_box {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+  
+  .author__content {
+    text-align: center !important;
+    width: 100% !important;
+  }
+  
+  .author__name {
+    text-align: center !important;
+    margin: 0.5rem 0 !important;
+  }
+  
+  /* Show navigation menu on mobile */
+  .masthead {
+    display: block !important;
+    visibility: visible !important;
+    position: relative !important;
+  }
+  
+  .masthead__menu {
+    display: block !important;
+  }
+  
+  .masthead__inner-wrap {
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    padding: 0.5rem 1rem !important;
+  }
+  
+  .greedy-nav {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;
+  }
+  
+  /* Ensure author bio and contact info are visible */
+  .author__bio {
+    margin: 0.5rem 0 !important;
+    font-size: 1rem !important;
+  }
+  
+  .author__urls.social-icons {
+    margin-top: 1rem !important;
+  }
+  
+  .author__urls.social-icons li {
+    margin-bottom: 0.5rem !important;
+    text-align: center !important;
+  }
+  
+  /* Main content below sidebar */
+  #main {
+    order: 1 !important;
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+  
+  /* Navigation toggle button for mobile */
   .greedy-nav button {
-    display: block;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 40px !important;
+    height: 40px !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 4px !important;
+    padding: 8px !important;
+    margin: 0 !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s ease !important;
   }
   
+  .greedy-nav button:hover {
+    background: rgba(0,0,0,0.05) !important;
+  }
+  
+  .greedy-nav button::after {
+    content: none !important;
+  }
+  
+  /* Reset and override any existing navicon styles */
+  .greedy-nav button .navicon {
+    /* Reset all previous styles */
+    all: unset !important;
+    /* Apply hamburger menu styles */
+    display: block !important;
+    position: relative !important;
+    width: 20px !important;
+    height: 2px !important;
+    background: #333 !important;
+    transition: background 0.2s ease !important;
+    /* Clear any existing content */
+    font-size: 0 !important;
+    text-indent: -9999px !important;
+    overflow: hidden !important;
+    /* Ensure no borders or other artifacts */
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  
+  .greedy-nav button .navicon * {
+    display: none !important;
+  }
+  
+  .greedy-nav button .navicon::before,
+  .greedy-nav button .navicon::after {
+    content: '' !important;
+    position: absolute !important;
+    left: 0 !important;
+    width: 20px !important;
+    height: 2px !important;
+    background: #333 !important;
+    transition: all 0.2s ease !important;
+    /* Reset any inherited styles */
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+  
+  .greedy-nav button .navicon::before {
+    top: -6px !important;
+  }
+  
+  .greedy-nav button .navicon::after {
+    top: 6px !important;
+  }
+  
+  /* X icon when menu is open */
+  .greedy-nav button.close .navicon {
+    background: transparent !important;
+  }
+  
+  .greedy-nav button.close .navicon::before {
+    transform: rotate(45deg) !important;
+    top: 0 !important;
+  }
+  
+  .greedy-nav button.close .navicon::after {
+    transform: rotate(-45deg) !important;
+    top: 0 !important;
+  }
+  
+  /* Navigation links with collapse functionality */
   .visible-links {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: #fff;
-    border: 1px solid #f2f3f3;
-    flex-direction: column;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s;
+    display: none !important;
+    flex-direction: column !important;
+    position: static !important;
+    background: #fff !important;
+    border: 1px solid #dee2e6 !important;
+    border-radius: 6px !important;
+    margin: 0.5rem 0 !important;
+    padding: 0.5rem !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+    animation: slideDown 0.3s ease !important;
   }
   
-  .visible-links.active {
-    max-height: 300px;
+  .visible-links.show {
+    display: flex !important;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   
   .masthead__menu-item {
-    width: 100%;
+    width: 100% !important;
+    margin: 0.25rem 0 !important;
+  }
+  
+  .masthead__menu-item a {
+    display: block !important;
+    padding: 0.75rem 1rem !important;
+    background: #f8f9fa !important;
+    border: 1px solid #e9ecef !important;
+    border-radius: 4px !important;
+    color: #495057 !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+  }
+  
+  .masthead__menu-item a:hover {
+    background: #007bff !important;
+    color: white !important;
+    border-color: #007bff !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 2px 4px rgba(0,123,255,0.2) !important;
   }
   
   .author__urls_sm {
@@ -359,6 +594,29 @@ code {
   
   .author__urls_sm a {
     font-size: 1.5em;
+  }
+  
+  /* Language switch buttons on mobile */
+  .language-switch {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 1rem !important;
+    margin: 1rem 0 !important;
+    flex-wrap: wrap !important;
+  }
+  
+  .language-switch a {
+    padding: 0.5rem 1rem !important;
+    border: 1px solid #ccc !important;
+    border-radius: 4px !important;
+    text-decoration: none !important;
+    background: #f8f9fa !important;
+    color: #333 !important;
+  }
+  
+  .language-switch a.active {
+    background: #007bff !important;
+    color: white !important;
   }
   
   .social-icons {
